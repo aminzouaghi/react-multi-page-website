@@ -1,16 +1,94 @@
-# React + Vite
+# React Multi-Page Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A multi-page website built with **React** and **Vite**, featuring client-side navigation, dynamic product pages, a login form, and a dashboard with nested routes.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Home Page:** Landing page of the website.
+- **About Page:** Information about the website.
+- **Products Page:** Displays a list of available products.
+- **Product Details:** Dynamic routing to display individual product information.
+- **Login Page:** Login form with input validation and error handling.
+- **Dashboard:** A dashboard with nested routes:
+  - Overview
+  - Profile
+  - Settings
+- **404 Page:** Custom page for invalid routes.
+- **Responsive Navigation:** Navigation between pages without full page reloads.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript (ES6+)
+- React Router
+- Tailwind CSS
+- HTML5
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) and npm installed.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/aminzouaghi/react-multi-page-website.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd react-multi-page-website
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in your terminal.
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   └── Navbar.jsx
+├── data/
+│   ├── products.js
+│   └── users.js
+├── pages/
+│   ├── dashboard/
+│   │   ├── DashboardLayout.jsx
+│   │   ├── DashboardHome.jsx
+│   │   ├── Profile.jsx
+│   │   └── Settings.jsx
+│   ├── About.jsx
+│   ├── Home.jsx
+│   ├── Login.jsx
+│   ├── NotFound.jsx
+│   ├── ProductDetails.jsx
+│   └── Products.jsx
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+
+## Important Note
+
+The login functionality is for demonstration and learning purposes only. It does not use a backend authentication system.
+
+## Author
+
+[Mohammed Amin Zouaghi](https://github.com/aminzouaghi)
