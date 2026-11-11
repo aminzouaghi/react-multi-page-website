@@ -3,6 +3,7 @@ import {useState} from 'react';
 import { useNavigate } from 'react-router';
 import users from '../data/users'
 
+
 function Login(){
 
     const [form, setForm] = useState(
@@ -74,7 +75,7 @@ function Login(){
 
         if (Object.keys(validationErrors).length === 0) {
 
-            navigate("/");
+            navigate("/dashboard");
 
         }
     }
