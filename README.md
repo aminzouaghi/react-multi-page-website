@@ -1,6 +1,6 @@
 # React Multi-Page Website
 
-A multi-page website built with **React** and **Vite**, featuring client-side navigation, dynamic product pages, a login form, and a dashboard with nested routes.
+A responsive multi-page website built with **React** and **Vite**, featuring client-side routing, dynamic product pages, form validation, and an interactive dashboard with statistics and charts.
 
 ## Features
 
@@ -9,12 +9,16 @@ A multi-page website built with **React** and **Vite**, featuring client-side na
 - **Products Page:** Displays a list of available products.
 - **Product Details:** Dynamic routing to display individual product information.
 - **Login Page:** Login form with input validation and error handling.
-- **Dashboard:** A dashboard with nested routes:
-  - Overview
-  - Profile
-  - Settings
+- **Dashboard:**
+  - Overview with statistical cards.
+  - Recent activities section.
+  - Sales chart.
+  - Users chart.
+  - Profile page.
+  - Settings page.
+  - Nested routing with a shared dashboard layout.
 - **404 Page:** Custom page for invalid routes.
-- **Responsive Navigation:** Navigation between pages without full page reloads.
+- **Responsive Navigation:** Client-side navigation between application pages using React Router.
 
 ## Technologies Used
 
@@ -23,6 +27,8 @@ A multi-page website built with **React** and **Vite**, featuring client-side na
 - JavaScript (ES6+)
 - React Router
 - Tailwind CSS
+- Recharts
+- Lucide React
 - HTML5
 
 ## Getting Started
@@ -64,10 +70,17 @@ Make sure you have [Node.js](https://nodejs.org/) and npm installed.
 ```text
 src/
 ├── components/
-│   └── Navbar.jsx
+│   ├── Navbar.jsx
+│   ├── StatCard.jsx
+│   ├── RecentActivities.jsx
+│   ├── SalesChart.jsx
+│   └── UsersChart.jsx
 ├── data/
 │   ├── products.js
-│   └── users.js
+│   ├── users.js
+│   ├── activities.js
+│   ├── salesData.js
+│   └── usersData.js
 ├── pages/
 │   ├── dashboard/
 │   │   ├── DashboardLayout.jsx
