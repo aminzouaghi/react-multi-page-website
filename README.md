@@ -1,6 +1,6 @@
 # React Multi-Page Website
 
-A responsive multi-page website built with **React** and **Vite**, featuring client-side routing, dynamic product pages, form validation, and an interactive dashboard with statistics and charts.
+A responsive multi-page website built with **React** and **Vite**, featuring client-side routing, dynamic product pages, form validation, user authentication context, protected dashboard routes, and an interactive dashboard with statistics and charts.
 
 ## Features
 
@@ -8,15 +8,22 @@ A responsive multi-page website built with **React** and **Vite**, featuring cli
 - **About Page:** Information about the website.
 - **Products Page:** Displays a list of available products.
 - **Product Details:** Dynamic routing to display individual product information.
-- **Login Page:** Login form with input validation and error handling.
+- **Login Page:**
+  - Login form with input validation and error handling.
+  - User authentication using React Context.
+  - Redirects users to the dashboard after successful login.
 - **Dashboard:**
   - Overview with statistical cards.
   - Recent activities section.
   - Sales chart.
   - Users chart.
-  - Profile page.
+  - Profile page with personal information.
+  - Edit profile functionality with form validation.
+  - Logout functionality.
   - Settings page.
   - Nested routing with a shared dashboard layout.
+- **Protected Routes:** Prevents unauthenticated users from accessing dashboard pages and redirects them to the login page.
+- **Authentication Context:** Uses React Context API to share user authentication state across components.
 - **404 Page:** Custom page for invalid routes.
 - **Responsive Navigation:** Client-side navigation between application pages using React Router.
 
@@ -26,6 +33,8 @@ A responsive multi-page website built with **React** and **Vite**, featuring cli
 - Vite
 - JavaScript (ES6+)
 - React Router
+- React Context API
+- React Hooks (`useState`, `useEffect`, `useContext`)
 - Tailwind CSS
 - Recharts
 - Lucide React
@@ -71,20 +80,23 @@ Make sure you have [Node.js](https://nodejs.org/) and npm installed.
 src/
 ├── components/
 │   ├── Navbar.jsx
-│   ├── StatCard.jsx
+│   ├── ProtectedRoute.jsx
 │   ├── RecentActivities.jsx
 │   ├── SalesChart.jsx
+│   ├── StatCard.jsx
 │   └── UsersChart.jsx
+├── context/
+│   └── AuthContext.jsx
 ├── data/
-│   ├── products.js
-│   ├── users.js
 │   ├── activities.js
+│   ├── products.js
 │   ├── salesData.js
+│   ├── users.js
 │   └── usersData.js
 ├── pages/
 │   ├── dashboard/
-│   │   ├── DashboardLayout.jsx
 │   │   ├── DashboardHome.jsx
+│   │   ├── DashboardLayout.jsx
 │   │   ├── Profile.jsx
 │   │   └── Settings.jsx
 │   ├── About.jsx
@@ -100,8 +112,10 @@ src/
 
 ## Important Note
 
-The login functionality is for demonstration and learning purposes only. It does not use a backend authentication system.
+The authentication functionality is implemented for demonstration and learning purposes only. It uses React Context API to manage the user's authentication state but does not include a backend authentication system.
+
+Protected routes provide client-side access control only. A real-world application requires backend authentication and authorization for proper security.
 
 ## Author
 
-[Mohammed Amin Zouaghi](https://github.com/aminzouaghi)
+[ Mohammed Amin Zouaghi ](https://github.com/aminzouaghi)

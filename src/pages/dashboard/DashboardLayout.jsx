@@ -1,8 +1,13 @@
 import { Outlet, NavLink  } from 'react-router';
+import { useContext } from 'react';
+import AuthContext from '../../context/AuthContext';
 
 
 
 function DashboardLayout() {
+
+    const {user} = useContext(AuthContext);
+
     return (
         <div className='flex min-h-screen bg-gray-100'>
 
@@ -10,6 +15,12 @@ function DashboardLayout() {
                 <h2 className="text-2xl font-bold mb-6">
                     Dashboard
                 </h2>
+
+                {user && (
+                    <p className="text-sm text-gray-400 mt-2">
+                        Welcome, {user.name}
+                    </p>
+                )}
 
                 <nav className='flex flex-col gap-3 mt-8'>
                     <NavLink 

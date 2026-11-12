@@ -1,7 +1,9 @@
 
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import { useNavigate } from 'react-router';
 import users from '../data/users'
+import AuthContext from '../context/AuthContext';
+
 
 
 function Login(){
@@ -13,6 +15,8 @@ function Login(){
             remember:false
         }
     );
+
+    const {setUser} = useContext(AuthContext);
 
     const [error, setError] = useState({});
     const navigate = useNavigate();
@@ -74,7 +78,7 @@ function Login(){
         setError(validationErrors);
 
         if (Object.keys(validationErrors).length === 0) {
-
+            setUser(handleUsers());
             navigate("/dashboard");
 
         }
